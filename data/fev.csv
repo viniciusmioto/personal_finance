@@ -1,0 +1,54 @@
+DATA,DESPESA,VALOR,CATEGORIA,SUBCATEGORIA,PAGAMENTO,BANCO,DONO
+27/01/2026,SoftMoc - Tênis Puma,$77.59,Eventual,Pessoal,Débito,Wise,Vini
+31/01/2026,Walmart,$135.53,Variáveis,Mercado,Débito,Wise,Vini
+31/01/2026,Tim Hortons - CRED NUBANK,$25.00,Variáveis,Alimentação,,,Vini
+31/01/2026,Costco Hotdog - CRED NUBANK,$4.00,Variáveis,Alimentação,,,Vini
+31/01/2026,Jean Coutu (Fizz SIM) - CRED NUBANK,$25.00,Variáveis,Mercado,,,Vini
+01/02/2026,Pharmaprix - Remédio Ana,$11.49,Variáveis,Saúde,Débito,Wise,Vini
+01/02/2026,Bilhete transporte - OPUS (STM),$6.50,Variáveis,Transporte,Débito,Wise,Vini
+01/02/2026,Bilhete transporte - OPUS (STM),$27.75,Variáveis,Transporte,Débito,Wise,Vini
+01/02/2026,Bilhete transporte - OPUS (STM),$14.00,Variáveis,Transporte,Débito,Wise,Vini
+02/02/2026,Withdraw - Ana TD's Debt ,$75.00,Eventual,Financeiro,Débito,Wise,Vini
+02/02/2026,Aluguel,$900.00,Fixas,Aluguel,Débito,Wise,Vini
+02/02/2026,Costco - Leonel,$176.78,Variáveis,Mercado,Débito,Wise,Vini
+02/02/2026,Carro Leo - Leonel,$40.00,Variáveis,Transporte,Débito,Wise,Vini
+02/02/2026,Bilhete transporte - OPUS (STM),$7.00,Variáveis,Transporte,Débito,Wise,Vini
+02/02/2026,Bilhete transporte - OPUS (STM),$11.25,Variáveis,Transporte,Crédito,TD,Vini
+03/02/2026,Plano Celular Chatr - Vini,$33.34,Fixas,Telefone,Débito,TD,Vini
+03/02/2026,Plano Celular Chatr - Ana,$33.34,Fixas,Telefone,Débito,TD,Vini
+04/02/2026,Interact Test - Ana's RBC,$1.00,Eventual,Financeiro,Débito,TD,Vini
+04/02/2026,Provigo - NF Ville St-Laurent,$65.69,Variáveis,Mercado,Crédito,TD,Vini
+04/02/2026,Bilhete transporte - OPUS (STM),$32.00,Variáveis,Transporte,Crédito,TD,Vini
+05/02/2026,Pharmaprix - Vini,$11.83,Variáveis,Saúde,Débito,RBC,Ana
+06/02/2026,Coisas para casa - Romina,$60.00,Eventual,Casa,Débito,TD,Vini
+06/02/2026,Impressão de currículos,$10.00,Eventual,Pessoal,Cash,Cash,Ana
+06/02/2026,Super C,$17.32,Variáveis,Mercado,Débito,RBC,Ana
+07/02/2026,Walmart,$56.05,Variáveis,Mercado,Crédito,TD,Vini
+09/02/2026,Super C,$10.40,Variáveis,Mercado,Crédito,TD,Vini
+10/02/2026,Bilhete transporte - OPUS (STM),$3.75,Variáveis,Transporte,Crédito,TD,Vini
+10/02/2026,Impressão de currículos,$8.00,Eventual,Pessoal,Cash,Cash,Ana
+10/02/2026,Bilhete transporte - OPUS (STM),$3.75,Variáveis,Transporte,Débito,RBC,Ana
+11/02/2026,Bilhete transporte - OPUS (STM),$7.00,Variáveis,Transporte,Crédito,TD,Vini
+11/02/2026,Provigo - NF Ville St-Laurent,$22.52,Variáveis,Mercado,Crédito,TD,Vini
+11/02/2026,Bilhete transporte - OPUS (STM),$7.00,Variáveis,Transporte,Crédito,TD,Vini
+11/02/2026,Pharmaprix - Ana,$10.99,Variáveis,Saúde,Crédito,TD,Vini
+13/02/2026,Walmart,$68.75,Variáveis,Mercado,Crédito,TD,Vini
+13/02/2026,Bilhete transporte - OPUS (STM),$21.75,Variáveis,Transporte,Crédito,TD,Vini
+13/02/2026,Provigo - NF Ville St-Laurent,$26.28,Variáveis,Mercado,Crédito,TD,Vini
+14/02/2026,Bilhete transporte - OPUS (STM),$11.25,Variáveis,Transporte,Crédito,TD,Vini
+14/02/2026,Simons - Casaco da Ana,$23.27,Eventual,Pessoal,Crédito,TD,Vini
+14/02/2026,Famous Player - Pipoca Cinema,$9.19,Eventual,Lazer,Crédito,TD,Vini
+16/02/2026,Walmart,$41.84,Variáveis,Mercado,Crédito,TD,Vini
+17/02/2026,Provigo - NF Ville St-Laurent,$7.00,Variáveis,Mercado,Crédito,TD,Vini
+18/02/2026,Provigo - NF Ville St-Laurent,$23.43,Variáveis,Mercado,Crédito,TD,Vini
+19/02/2026,Provigo - NF Ville St-Laurent,$7.00,Variáveis,Mercado,Débito,RBC,Ana
+19/02/2026,Bilhete transporte - OPUS (STM),$7.00,Variáveis,Transporte,Crédito,TD,Vini
+20/02/2026,Bilhete transporte - OPUS (STM),$9.75,Variáveis,Transporte,Crédito,TD,Vini
+20/02/2026,Bilhete transporte - OPUS (STM),$5.00,Variáveis,Transporte,Crédito,TD,Vini
+20/02/2026,Bilhete transporte - OPUS (STM),$11.25,Variáveis,Transporte,Crédito,TD,Vini
+20/02/2026,Bilhete transporte - OPUS (STM),$16.75,Variáveis,Transporte,Crédito,TD,Vini
+21/02/2026,Provigo - NF Ville St-Laurent,$17.89,Variáveis,Mercado,Crédito,TD,Vini
+21/02/2026,Gnochi - Drogheria Fine,$11.50,Eventual,Lazer,Crédito,TD,Vini
+21/02/2026,Alphabet Cafe,$5.46,Eventual,Lazer,Crédito,TD,Vini
+21/02/2026,Walmart,$117.00,Variáveis,Mercado,Crédito,TD,Vini
+22/02/2026,Traduções de documentos - PhD Ana,$293.51,Eventual,Pessoal,Débito,RBC,Ana
