@@ -63,7 +63,7 @@ def load_data():
     df['DATA'] = pd.to_datetime(df['DATA'], format='%d/%m/%Y')
     # Clean the VALOR column: remove $, and convert to float
     if df['VALOR'].dtype == 'O':
-        df['VALOR'] = df['VALOR'].replace('[\$,]', '', regex=True).astype(float)
+        df['VALOR'] = df['VALOR'].replace(r'[\$,]', '', regex=True).astype(float)
         
     # Extração de dias da semana e semanas para gráficos temporais
     df['SEMANA'] = df['DATA'].dt.isocalendar().week
@@ -81,28 +81,37 @@ except FileNotFoundError:
 # --- HEADER ---
 st.title("🏦 Dashboard Financeiro Principal")
 st.markdown("Gestão consolidada de despesas.")
+
+bancos_disponiveis = df['BANCO'].dropna().unique().tolist()
+bancos_opcoes = ["Todos"] + sorted(bancos_disponiveis)
+banco_selecionado = st.selectbox("Filtro por Banco:", bancos_opcoes)
+
+if banco_selecionado != "Todos":
+    df = df[df['BANCO'] == banco_selecionado]
+
 st.divider()
 
 # --- KPIs ---
 total_expense = df['VALOR'].sum()
 transaction_count = len(df)
 total_credit = df[df['PAGAMENTO'] == 'Crédito']['VALOR'].sum()
+total_debit = df[df['PAGAMENTO'] == 'Débito']['VALOR'].sum()
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.metric(label="Gasto Total", value=f"$ {total_expense:,.2f}")
 
 with col2:
-    st.metric(label="Número de Transações", value=f"{transaction_count}")
+    st.metric(label="Transações", value=f"{transaction_count}")
 
 with col3:
-    st.metric(label="Total no Crédito", value=f"$ {total_credit:,.2f}")
+    st.metric(label="Total Crédito", value=f"$ {total_credit:,.2f}")
+
+with col4:
+    st.metric(label="Total Débito", value=f"$ {total_debit:,.2f}")
     
 st.divider()
-
-# --- CHARTS ---
-st.subheader("Análise Gráfica")
 
 # Banking Styling
 CHART_COLOR_PRIMARY = '#1D4ED8' # Blue
@@ -110,13 +119,29 @@ CHART_COLOR_SECONDARY = '#0EA5E9' # Light Blue
 CHART_COLOR_TERTIARY = '#10B981' # Green
 FONT_FAMILY = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif'
 
-# 1. Resumo por Categoria (Moved to top from details)
-st.markdown("#### Resumo por Categoria")
+# 1. Resumo
+st.markdown("#### Resumo")
 summary_cat = df.groupby('CATEGORIA').agg(
-    Total=('VALOR', 'sum'),
+    Valor=('VALOR', 'sum'),
     Transações=('VALOR', 'count')
-).sort_values('Total', ascending=False)
-st.dataframe(summary_cat.style.format({"Total": "$ {:,.2f}"}), width='stretch')
+)
+
+credito_s = df[df['PAGAMENTO'] == 'Crédito'].groupby('CATEGORIA')['VALOR'].sum()
+debito_s = df[df['PAGAMENTO'] == 'Débito'].groupby('CATEGORIA')['VALOR'].sum()
+
+summary_cat['Crédito'] = credito_s
+summary_cat['Débito'] = debito_s
+summary_cat = summary_cat.fillna(0).sort_values('Valor', ascending=False)
+
+st.dataframe(
+    summary_cat.style.format({
+        "Valor": "$ {:,.2f}", 
+        "Transações": "{:.0f}",
+        "Crédito": "$ {:,.2f}", 
+        "Débito": "$ {:,.2f}"
+    }), 
+    width='stretch'
+)
 
 # 2. Side-by-Side: Subcategoria x Valor AND Transações x Subcategoria
 col_subcat_1, col_subcat_2 = st.columns(2)

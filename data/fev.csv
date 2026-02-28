@@ -9,7 +9,7 @@ DATA,DESPESA,VALOR,CATEGORIA,SUBCATEGORIA,PAGAMENTO,BANCO,DONO
 01/02/2026,Bilhete transporte - OPUS (STM),$27.75,Variáveis,Transporte,Débito,Wise,Vini
 01/02/2026,Bilhete transporte - OPUS (STM),$14.00,Variáveis,Transporte,Débito,Wise,Vini
 02/02/2026,Withdraw - Ana TD's Debt ,$75.00,Eventual,Financeiro,Débito,Wise,Vini
-02/02/2026,Aluguel,$900.00,Fixas,Aluguel,Débito,Wise,Vini
+02/02/2026,Aluguel - Mona Aline,$900.00,Fixas,Aluguel,Débito,Wise,Vini
 02/02/2026,Costco - Leonel,$176.78,Variáveis,Mercado,Débito,Wise,Vini
 02/02/2026,Carro Leo - Leonel,$40.00,Variáveis,Transporte,Débito,Wise,Vini
 02/02/2026,Bilhete transporte - OPUS (STM),$7.00,Variáveis,Transporte,Débito,Wise,Vini
@@ -32,12 +32,13 @@ DATA,DESPESA,VALOR,CATEGORIA,SUBCATEGORIA,PAGAMENTO,BANCO,DONO
 11/02/2026,Provigo - NF Ville St-Laurent,$22.52,Variáveis,Mercado,Crédito,TD,Vini
 11/02/2026,Bilhete transporte - OPUS (STM),$7.00,Variáveis,Transporte,Crédito,TD,Vini
 11/02/2026,Pharmaprix - Ana,$10.99,Variáveis,Saúde,Crédito,TD,Vini
-13/02/2026,Walmart,$68.75,Variáveis,Mercado,Crédito,TD,Vini
+13/02/2026,Walmart,$64.56,Variáveis,Mercado,Crédito,TD,Vini
 13/02/2026,Bilhete transporte - OPUS (STM),$21.75,Variáveis,Transporte,Crédito,TD,Vini
 13/02/2026,Provigo - NF Ville St-Laurent,$26.28,Variáveis,Mercado,Crédito,TD,Vini
 14/02/2026,Bilhete transporte - OPUS (STM),$11.25,Variáveis,Transporte,Crédito,TD,Vini
 14/02/2026,Simons - Casaco da Ana,$23.27,Eventual,Pessoal,Crédito,TD,Vini
 14/02/2026,Famous Player - Pipoca Cinema,$9.19,Eventual,Lazer,Crédito,TD,Vini
+16/02/2026,Le Meme Prix Plus,$2.65,Eventual,Casa,Crédito,TD,Vini
 16/02/2026,Walmart,$41.84,Variáveis,Mercado,Crédito,TD,Vini
 17/02/2026,Provigo - NF Ville St-Laurent,$7.00,Variáveis,Mercado,Crédito,TD,Vini
 18/02/2026,Provigo - NF Ville St-Laurent,$23.43,Variáveis,Mercado,Crédito,TD,Vini
@@ -50,5 +51,17 @@ DATA,DESPESA,VALOR,CATEGORIA,SUBCATEGORIA,PAGAMENTO,BANCO,DONO
 21/02/2026,Provigo - NF Ville St-Laurent,$17.89,Variáveis,Mercado,Crédito,TD,Vini
 21/02/2026,Gnochi - Drogheria Fine,$11.50,Eventual,Lazer,Crédito,TD,Vini
 21/02/2026,Alphabet Cafe,$5.46,Eventual,Lazer,Crédito,TD,Vini
-21/02/2026,Walmart,$117.00,Variáveis,Mercado,Crédito,TD,Vini
-22/02/2026,Traduções de documentos - PhD Ana,$293.51,Eventual,Pessoal,Débito,RBC,Ana
+21/02/2026,Bilhete transporte - OPUS (STM),$3.75,Variáveis,Transporte,Crédito,TD,Vini
+22/02/2026,Walmart,$94.51,Variáveis,Mercado,Crédito,TD,Vini
+22/02/2026,Traduções de documentos - PhD Ana,$293.51,Eventual,Educação,Débito,RBC,Ana
+22/02/2026,Metro Khalid AZ,$25.51,Variáveis,Mercado,Crédito,TD,Vini
+22/02/2026,Bilhete transporte - OPUS (STM),$32.00,Variáveis,Transporte,Crédito,TD,Vini
+23/02/2026,Le Meme Prix Plus,$9.50,Eventual,Casa,Crédito,TD,Vini
+23/02/2026,Pharmaprix,$10.25,Variáveis,Alimentação,Crédito,TD,Vini
+24/02/2026,Bilhete transporte - OPUS (STM),$9.75,Variáveis,Transporte,Crédito,TD,Vini
+26/02/2026,Provigo - NF Ville St-Laurent,$33.59,Variáveis,Mercado,Crédito,TD,Vini
+27/02/2026,Walmart,$226.57,Variáveis,Mercado,Crédito,RBC,Ana
+27/02/2026,Assinatura - iCloud,$4.59,Fixas,Pessoal,Crédito,RBC,Ana
+27/02/2026,Provigo - NF Ville St-Laurent,$7.00,Variáveis,Mercado,Crédito,TD,Vini
+28/02/2026,Teste de Ingles - Duolingo,$185.94,Eventual,Educação,Crédito,RBC,Ana
+28/02/2026,Applicação Concordia - Ana,$100.00,Eventual,Educação,Crédito,TD,Vini
