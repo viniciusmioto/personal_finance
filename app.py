@@ -143,14 +143,12 @@ def load_data():
 
 @st.cache_data
 def load_configs():
-    # Only 1 row expected
-    configs = pd.read_csv('data/finance_2026 - CONFIGS.csv').iloc[0]
-    return {
-        'open_td': pd.to_datetime(configs['open_td'], format='%d/%m/%Y'),
-        'close_td': pd.to_datetime(configs['close_td'], format='%d/%m/%Y'),
-        'open_rbc': pd.to_datetime(configs['open_rbc'], format='%d/%m/%Y'),
-        'close_rbc': pd.to_datetime(configs['close_rbc'], format='%d/%m/%Y'),
-    }
+    configs = pd.read_csv('data/finance_2026 - CONFIGS.csv')
+    # Convert dates
+    date_cols = ['open_td', 'close_td', 'open_rbc', 'close_rbc']
+    for col in date_cols:
+        configs[col] = pd.to_datetime(configs[col], format='%d/%m/%Y')
+    return configs
 
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
@@ -159,7 +157,7 @@ def get_base64_of_bin_file(bin_file):
 
 try:
     df = load_data()
-    configs = load_configs()
+    configs_df = load_configs()
 except FileNotFoundError as e:
     st.error(f"Arquivo de dados não encontrado: {e}")
     st.stop()
@@ -168,34 +166,22 @@ except FileNotFoundError as e:
 st.title("🏦 Dashboard Financeiro Principal")
 st.markdown("Gestão consolidada de despesas.")
 
-# Filtros Globais (Mês e Banco afetam a Visão Geral)
-col_filter1, col_filter2 = st.columns(2)
-
-with col_filter1:
-    meses_disponiveis = sorted(df['MES_STR'].unique().tolist(), reverse=True)
-    mesos_opcoes = ["Todos"] + meses_disponiveis
-    mes_selecionado = st.selectbox("Selecione o Mês:", mesos_opcoes)
-
-with col_filter2:
-    bancos_disponiveis = df['BANCO'].dropna().unique().tolist()
-    bancos_opcoes = ["Todos"] + sorted(bancos_disponiveis)
-    banco_selecionado = st.selectbox("Filtro por Banco:", bancos_opcoes)
-
-
-# Aplicar filtros apenas nas views da aba "Visão Geral"
-df_filtered = df.copy()
-if mes_selecionado != "Todos":
-    df_filtered = df_filtered[df_filtered['MES_STR'] == mes_selecionado]
-if banco_selecionado != "Todos":
-    df_filtered = df_filtered[df_filtered['BANCO'] == banco_selecionado]
-
 # TABS
-tab_overview, tab_invoices = st.tabs(["📊 Visão Geral", "💳 Faturas Atuais"])
+tab_overview, tab_cards = st.tabs(["📊 Visão Geral", "💳 Cartões de Crédito"])
 
 # ==============================================================================
 # ABA: VISÃO GERAL
 # ==============================================================================
 with tab_overview:
+    # Filtro de Mês
+    col_filter, _ = st.columns(2)
+    with col_filter:
+        meses_disponiveis = sorted(df['MES_STR'].unique().tolist(), reverse=True)
+        mes_selecionado = st.selectbox("Selecione o Mês:", meses_disponiveis)
+
+    # Aplicar filtro
+    df_filtered = df[df['MES_STR'] == mes_selecionado].copy()
+
     # --- KPIs ---
     total_expense = df_filtered['VALOR'].sum()
     transaction_count = len(df_filtered)
@@ -297,9 +283,9 @@ with tab_overview:
     col_time_1, col_time_2 = st.columns(2)
     
     with col_time_1:
-        # Line Chart: Tendência (Apenas não 'Fixas')
-        st.markdown(f"#### Tendência de Gastos Variáveis e Eventuais ({visao_temporal})")
-        df_var = df_filtered[df_filtered['CATEGORIA'] != 'Fixas'].copy()
+        # Line Chart: Tendência (Apenas Variáveis)
+        st.markdown(f"#### Tendência de Gastos Variáveis ({visao_temporal})")
+        df_var = df_filtered[df_filtered['CATEGORIA'] == 'Variáveis'].copy()
         if not df_var.empty:
             line_df = df_var.groupby([col_tempo, 'SUBCATEGORIA'])['VALOR'].sum().reset_index()
             fig_line = px.line(line_df, x=col_tempo, y='VALOR', color='SUBCATEGORIA', markers=True,
@@ -312,21 +298,25 @@ with tab_overview:
             fig_line.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#F1F5F9')
             st.plotly_chart(fig_line, width='stretch')
         else:
-            st.info("Nenhum dado das categorias variáveis e eventuais para exibir.")
+            st.info("Nenhum dado da categoria variáveis para exibir.")
     
     with col_time_2:
-        # Histogram: Valor x Data (Sem distinção)
-        st.markdown(f"#### Histograma de Gastos Total ({visao_temporal})")
-        if not df_filtered.empty:
-            hist_df = df_filtered.groupby(col_tempo)['VALOR'].sum().reset_index()
-            fig_hist = px.bar(hist_df, x=col_tempo, y='VALOR',
-                              color_discrete_sequence=['#475569']) # Slate 600
+        # Histogram: Valor x Data (Eventuais)
+        st.markdown(f"#### Histograma de Gastos Eventuais ({visao_temporal})")
+        df_eventual = df_filtered[df_filtered['CATEGORIA'] == 'Eventual'].copy()
+        if not df_eventual.empty:
+            hist_df = df_eventual.groupby([col_tempo, 'SUBCATEGORIA'])['VALOR'].sum().reset_index()
+            fig_hist = px.bar(hist_df, x=col_tempo, y='VALOR', color='SUBCATEGORIA',
+                              color_discrete_sequence=px.colors.qualitative.Prism)
             fig_hist.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', bargap=0.1,
-                                   xaxis_title=label_tempo, yaxis_title="$", font=dict(family=FONT_FAMILY, size=13))
+                                   xaxis_title=label_tempo, yaxis_title="$", font=dict(family=FONT_FAMILY, size=13),
+                                   legend_title_text='Categorias')
             fig_hist.update_xaxes(showgrid=True, gridwidth=1, gridcolor='#F1F5F9', type='category' if visao_temporal == 'Semanal' else '-')
             if visao_temporal == 'Diário': fig_hist.update_xaxes(tickformat=dt_tickformat)
             fig_hist.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#F1F5F9')
             st.plotly_chart(fig_hist, width='stretch')
+        else:
+            st.info("Nenhum dado na categoria eventual para exibir.")
     
     # 4. Gráfico Barra: Média de Valor por Dia da Semana
     st.markdown("#### Média de Gastos por Dia da Semana")
@@ -378,18 +368,28 @@ with tab_overview:
 # ==============================================================================
 # ABA: FATURAS ATUAIS
 # ==============================================================================
-with tab_invoices:
-    st.markdown("### Fechamento de Faturas Atuais")
-    st.markdown(f"Cálculos baseados no período aberto de fatura.")
+with tab_cards:
+    st.markdown("### Fechamento de Faturas")
     
-    # Fatura TD Calculation: Using the raw DataFrame `df` (not filtered by month widget)
+    # Filtro de Mês Referência
+    meses_ref_disponiveis = sorted(configs_df['mes_ref'].unique().tolist(), reverse=True)
+    col_ref, _ = st.columns(2)
+    with col_ref:
+        mes_ref_selecionado = st.selectbox("Selecione o Mês de Referência:", meses_ref_disponiveis)
+    
+    # Pegar as datas do mês selecionado
+    config_row = configs_df[configs_df['mes_ref'] == mes_ref_selecionado].iloc[0]
+    
+    st.markdown(f"Cálculos baseados no período de fatura do mês {mes_ref_selecionado}.")
+    
+    # Fatura TD Calculation: Using the raw DataFrame `df`
     td_invoice_mask = (df['PAGAMENTO'] == 'Crédito') & (df['BANCO'] == 'TD') & \
-                      (df['DATA'] >= configs['open_td']) & (df['DATA'] < configs['close_td'])
+                      (df['DATA'] >= config_row['open_td']) & (df['DATA'] < config_row['close_td'])
     total_fatura_td = df[td_invoice_mask]['VALOR'].sum()
     
-    # Fatura RBC Calculation: Using the raw DataFrame `df` (not filtered by month widget)
+    # Fatura RBC Calculation: Using the raw DataFrame `df`
     rbc_invoice_mask = (df['PAGAMENTO'] == 'Crédito') & (df['BANCO'] == 'RBC') & \
-                       (df['DATA'] >= configs['open_rbc']) & (df['DATA'] < configs['close_rbc'])
+                       (df['DATA'] >= config_row['open_rbc']) & (df['DATA'] < config_row['close_rbc'])
     total_fatura_rbc = df[rbc_invoice_mask]['VALOR'].sum()
     total_consolidado = total_fatura_td + total_fatura_rbc
     
@@ -419,9 +419,9 @@ with tab_invoices:
         st.markdown(f"""
         <div class="invoice-card">
             <div class="invoice-info">
-                <span class="invoice-label">Fatura Atual - TD</span>
+                <span class="invoice-label">Fatura - TD</span>
                 <span class="invoice-value">$ {total_fatura_td:,.2f}</span>
-                <span class="invoice-period">Período: {configs['open_td'].strftime('%d/%m/%Y')} a {configs['close_td'].strftime('%d/%m/%Y')}</span>
+                <span class="invoice-period">Período: {config_row['open_td'].strftime('%d/%m/%Y')} a {config_row['close_td'].strftime('%d/%m/%Y')}</span>
             </div>
             {td_logo_html}
         </div>
@@ -431,9 +431,9 @@ with tab_invoices:
         st.markdown(f"""
         <div class="invoice-card">
             <div class="invoice-info">
-                <span class="invoice-label">Fatura Atual - RBC</span>
+                <span class="invoice-label">Fatura - RBC</span>
                 <span class="invoice-value">$ {total_fatura_rbc:,.2f}</span>
-                <span class="invoice-period">Período: {configs['open_rbc'].strftime('%d/%m/%Y')} a {configs['close_rbc'].strftime('%d/%m/%Y')}</span>
+                <span class="invoice-period">Período: {config_row['open_rbc'].strftime('%d/%m/%Y')} a {config_row['close_rbc'].strftime('%d/%m/%Y')}</span>
             </div>
             {rbc_logo_html}
         </div>

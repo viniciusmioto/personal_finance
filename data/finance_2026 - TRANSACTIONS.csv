@@ -59,7 +59,6 @@ DATA,DESPESA,VALOR,CATEGORIA,SUBCATEGORIA,PAGAMENTO,BANCO,DONO
 23/02/2026,Pharmaprix,$10.25,Variáveis,Alimentação,Crédito,TD,Vini
 24/02/2026,Bilhete transporte - OPUS (STM),$9.75,Variáveis,Transporte,Crédito,TD,Vini
 26/02/2026,Provigo - NF Ville St-Laurent,$33.59,Variáveis,Mercado,Crédito,TD,Vini
-27/02/2026,Walmart,$226.57,Variáveis,Mercado,Crédito,RBC,Ana
 27/02/2026,Assinatura - iCloud,$4.59,Fixas,Pessoal,Crédito,RBC,Ana
 27/02/2026,Provigo - NF Ville St-Laurent,$7.00,Variáveis,Mercado,Crédito,TD,Vini
 28/02/2026,Teste de Ingles - Duolingo,$190.78,Eventual,Educação,Crédito,RBC,Ana
@@ -81,11 +80,30 @@ DATA,DESPESA,VALOR,CATEGORIA,SUBCATEGORIA,PAGAMENTO,BANCO,DONO
 05/03/2026,Bilhete transporte - OPUS (STM),$9.75,Variáveis,Transporte,Crédito,RBC,Ana
 05/03/2026,Conveniencia - Vitamin Water,$4.59,Variáveis,Alimentação,Crédito,RBC,Ana
 07/03/2026,Adonis ,$39.82,Variáveis,Mercado,Crédito,TD,Vini
-07/03/2026,Walmart - (Fisico),$156.37,Variáveis,Mercado,Crédito,TD,Vini
+07/03/2026,Walmart - Físico,$156.37,Variáveis,Mercado,Crédito,TD,Vini
 07/03/2026,Pizza Soleil,$23.64,Variáveis,Alimentação,Crédito,TD,Vini
-08/03/2026,Walmart - (PENDING),$49.94,Variáveis,Mercado,Crédito,RBC,Ana
+08/03/2026,Walmart ,$49.94,Variáveis,Mercado,Crédito,RBC,Ana
 08/03/2026,Walmart - Potes,$44.81,Variáveis,Mercado,Crédito,TD,Vini
 09/03/2026,Walmart Delivery Pass,$10.31,Fixas,Assinatura,Crédito,RBC,Ana
 09/03/2026,Almoço UQAM ,$21.67,Variáveis,Alimentação,Débito,RBC,Ana
 09/03/2026,Dollarama,$14.66,Eventual,Casa,Débito,RBC,Ana
 09/03/2026,Provigo ,$21.22,Variáveis,Mercado,Débito,RBC,Ana
+10/03/2026,NAYAX - maquina,$3.62,Variáveis,Alimentação,Débito,RBC,Ana
+10/03/2026,Couchetard,$4.80,Variáveis,Alimentação,Débito,RBC,Ana
+11/03/2026,NAYAX - maquina,$3.62,Variáveis,Alimentação,Débito,RBC,Ana
+12/03/2026,Provigo - NF Ville St-Laurent,$48.78,Variáveis,Alimentação,Crédito,TD,Vini
+12/03/2026,Muffin plus,$6.00,Variáveis,Alimentação,Débito,RBC,Ana
+13/03/2026,Muffin plus,$5.29,Variáveis,Alimentação,Débito,RBC,Ana
+13/03/2026,NAYAX - maquina,$6.45,Variáveis,Alimentação,Débito,RBC,Ana
+13/03/2026,Walmart - App,$56.11,Variáveis,Mercado,Crédito,TD,Vini
+14/03/2026,Kung Pao Wok - Água,$2.29,Variáveis,Alimentação,Crédito,TD,Vini
+14/03/2026,Tommy Hilfiger ,$39.08,Eventual,Pessoal,Crédito,TD,Vini
+14/03/2026,Levi's L'entrepot,$241.41,Eventual,Pessoal,Crédito,TD,Vini
+14/03/2026,American Eagle ,$31.00,Eventual,Pessoal,Crédito,RBC,Ana
+14/03/2026,RW&CO,$97.88,Eventual,Pessoal,Crédito,TD,Vini
+14/03/2026,Ashton - Mirabel,$12.00,Variáveis,Alimentação,Crédito,TD,Vini
+14/03/2026,Costco,$5.15,Variáveis,Alimentação,Débito,RBC,Ana
+14/03/2026,Dinheiro Rosani,$64.93,Eventual,Pessoal,Débito,RBC,Ana
+15/03/2026,Leonel - Costco e Carro,$5.00,Eventual,Lazer,Débito,RBC,Ana
+15/03/2026,Leonel - Costco e Carro,$60.00,Variáveis,Alimentação,Débito,RBC,Ana
+15/03/2026,Leonel - Costco e Carro,$16.29,Eventual,Transporte,Débito,RBC,Ana
