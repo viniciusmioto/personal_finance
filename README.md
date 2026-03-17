@@ -53,12 +53,21 @@ Dashboard financeiro moderno e intuitivo construído com **Streamlit**, projetad
    streamlit run app.py
    ```
 
-## 📂 Estrutura de Pastas
+## 📂 Estrutura do Projeto
 
-- `app.py`: Arquivo principal da aplicação Streamlit.
-- `data/`: Contém os arquivos CSV de transações e configurações.
-- `imgs/`: Assets visuais (logos TD e RBC).
-- `.venv/`: Ambiente virtual do Python.
+```
+personal_finance/
+├── app.py                      # Entrypoint da aplicação Streamlit
+├── src/
+│   ├── styles.py               # Constantes de CSS (estética fintech)
+│   ├── data_loader.py          # Carregamento de dados, constantes de gráficos
+│   └── tabs/
+│       ├── overview.py         # Aba "Visão Geral" (KPIs, resumos, gráficos)
+│       └── credit_cards.py     # Aba "Cartões de Crédito" (faturas TD e RBC)
+├── data/                       # Arquivos CSV de transações e configurações
+├── imgs/                       # Assets visuais (logos TD e RBC)
+└── .venv/                      # Ambiente virtual do Python
+```
 
 ---
 *Desenvolvido com foco em segurança, clareza e design corporativo.*
