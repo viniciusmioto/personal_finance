@@ -33,10 +33,24 @@ def load_data():
 def load_configs():
     configs = pd.read_csv('data/finance_2026 - CONFIGS.csv')
     # Convert dates
-    date_cols = ['open_td', 'close_td', 'open_rbc', 'close_rbc']
+    date_cols = ['open_td', 'close_td', 'due_td', 'open_rbc', 'close_rbc', 'due_rbc']
     for col in date_cols:
         configs[col] = pd.to_datetime(configs[col], format='%d/%m/%Y')
+    # Ensure limits are numeric (handling currency symbols if present)
+    for col in ['limit_td', 'limit_rbc']:
+        if configs[col].dtype == 'O':
+            configs[col] = configs[col].replace(r'[\$,]', '', regex=True).astype(float)
+        configs[col] = pd.to_numeric(configs[col])
     return configs
+
+
+@st.cache_data
+def load_payments():
+    payments = pd.read_csv('data/finance_2026 - PAYMENTS.csv')
+    payments['DATA'] = pd.to_datetime(payments['DATA'], format='%d/%m/%Y')
+    if payments['VALOR'].dtype == 'O':
+        payments['VALOR'] = payments['VALOR'].replace(r'[\$,]', '', regex=True).astype(float)
+    return payments
 
 
 def get_base64_of_bin_file(bin_file):

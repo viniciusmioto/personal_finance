@@ -107,3 +107,6 @@ DATA,DESPESA,VALOR,CATEGORIA,SUBCATEGORIA,PAGAMENTO,BANCO,DONO
 15/03/2026,Leonel - Costco e Carro,$5.00,Eventual,Lazer,Débito,RBC,Ana
 15/03/2026,Leonel - Costco e Carro,$60.00,Variáveis,Alimentação,Débito,RBC,Ana
 15/03/2026,Leonel - Costco e Carro,$16.29,Eventual,Transporte,Débito,RBC,Ana
+16/03/2026,Walmart - App,$65.59,Variáveis,Mercado,Crédito,TD,Vini
+16/03/2026,Provigo - NF Ville St-Laurent,$3.17,Variáveis,Mercado,Crédito,TD,Vini
+17/03/2026,Jean Coutu - Remedios para Ana,$19.40,Variáveis,Farmácia,Crédito,RBC,Ana

@@ -104,5 +104,77 @@ APP_CSS = """
         border-bottom-color: #1D4ED8;
         font-weight: 700;
     }
+    /* --- Global Limit Bar --- */
+    .global-limit-card {
+        background-color: white;
+        padding: 20px 24px;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+        border: 1px solid #E2E8F0;
+        margin-bottom: 24px;
+    }
+    .limit-label {
+        font-size: 0.875rem;
+        color: #64748B;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .limit-value {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .limit-bar-container-global {
+        width: 100%;
+        height: 8px; /* Thicker than before */
+        background: #F1F5F9;
+        border-radius: 4px;
+        margin: 8px 0;
+        overflow: hidden;
+    }
+    .limit-bar-fill {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.4s ease;
+    }
+    .limit-available {
+        font-size: 0.85rem;
+        color: #475569;
+        font-weight: 500;
+        display: block;
+    }
+    /* --- Tooltip on card hover --- */
+    .invoice-card {
+        position: relative;
+    }
+    .tooltip-content {
+        display: none;
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1E293B;
+        color: #F1F5F9;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        z-index: 10;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        flex-direction: column;
+        gap: 4px;
+    }
+    .tooltip-content::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: #1E293B;
+    }
+    .invoice-card:hover .tooltip-content {
+        display: flex;
+    }
     </style>
 """
