@@ -53,37 +53,44 @@ DATA,DESPESA,VALOR,CATEGORIA,SUBCATEGORIA,PAGAMENTO,BANCO,DONO
 21/02/2026,Bilhete transporte - OPUS (STM),$3.75,Variáveis,Transporte,Crédito,TD,Vini
 22/02/2026,Walmart,$94.51,Variáveis,Mercado,Crédito,TD,Vini
 22/02/2026,Traduções de documentos - PhD Ana,$293.51,Eventual,Educação,Débito,RBC,Ana
-22/02/2026,Metro Khalid AZ,$25.51,Variáveis,Mercado,Crédito,TD,Vini
+22/02/2026,Metro - Khalid AZ,$25.51,Variáveis,Mercado,Crédito,TD,Vini
 22/02/2026,Bilhete transporte - OPUS (STM),$32.00,Variáveis,Transporte,Crédito,TD,Vini
 23/02/2026,Le Meme Prix Plus,$9.50,Eventual,Casa,Crédito,TD,Vini
 23/02/2026,Pharmaprix,$10.25,Variáveis,Alimentação,Crédito,TD,Vini
 24/02/2026,Bilhete transporte - OPUS (STM),$9.75,Variáveis,Transporte,Crédito,TD,Vini
 26/02/2026,Provigo - NF Ville St-Laurent,$33.59,Variáveis,Mercado,Crédito,TD,Vini
 27/02/2026,Assinatura - iCloud,$4.59,Fixas,Pessoal,Crédito,RBC,Ana
+27/02/2026,Couchetard,$6.76,Variáveis,Mercado,Crédito,RBC,Ana
 27/02/2026,Provigo - NF Ville St-Laurent,$7.00,Variáveis,Mercado,Crédito,TD,Vini
-28/02/2026,Teste de Ingles - Duolingo,$190.78,Eventual,Educação,Crédito,RBC,Ana
+28/02/2026,Provigo - NF Ville St-Laurent,$22.93,Variáveis,Mercado,Crédito,RBC,Ana
+28/02/2026,Teste de Ingles - Duolingo,$190.58,Eventual,Educação,Crédito,RBC,Ana
 28/02/2026,Applicação Concordia - Ana,$100.00,Eventual,Educação,Crédito,TD,Vini
 28/02/2026,Bilhete transporte - OPUS (STM),$11.25,Variáveis,Transporte,Crédito,TD,Vini
 28/02/2026,Bar McKibbin's,$24.27,Eventual,Lazer,Crédito,TD,Vini
 01/03/2026,Aluguel - Mona Aline,$820.00,Fixas,Aluguel,Débito,RBC,Ana
 01/03/2026,Netfilx,$9.19,Fixas,Assinatura,Crédito,TD,Vini
 02/03/2026,OPUS Mensal - Ana,$104.50,Fixas,Transporte,Crédito,TD,Vini
-02/03/2026,Provigo ,$32.38,Variáveis,Mercado,Crédito,RBC,Ana
+02/03/2026,Provigo - NF Ville St-Laurent,$32.38,Variáveis,Mercado,Crédito,RBC,Ana
 02/03/2026,Bilhete de Transporte - STL Cartier,$9.75,Variáveis,Transporte,Crédito,RBC,Ana
 02/03/2026,Foto Cartão Opus,$15.00,Eventual,Transporte,Crédito,TD,Vini
 02/03/2026,Plano de Telefone Chatr - Ana,$33.34,Fixas,Telefone,Débito,TD,Vini
 03/03/2026,OPUS Mensal - Vini,$62.75,Fixas,Transporte,Crédito,TD,Vini
 03/03/2026,Plano de Telefone Chatr - Vini,$33.34,Fixas,Telefone,Débito,TD,Vini
-03/03/2026,Walmart,$179.24,Variáveis,Mercado,Crédito,RBC,Ana
-04/03/2026,Lanche Concordia,$12.82,Variáveis,Alimentação,Crédito,RBC,Ana
-05/03/2026,Provigo ,$3.75,Variáveis,Mercado,Crédito,TD,Vini
+03/03/2026,Walmart,$163.90,Variáveis,Mercado,Crédito,RBC,Ana
+03/03/2026,Couchetard,$5.83,Eventual,Alimentação,Crédito,RBC,Ana
+04/03/2026,Tim Hortons,$9.51,Eventual,Alimentação,Crédito,RBC,Ana
+05/03/2026,Provigo - NF Ville St-Laurent,$3.75,Variáveis,Mercado,Crédito,TD,Vini
 05/03/2026,Bilhete transporte - OPUS (STM),$9.75,Variáveis,Transporte,Crédito,RBC,Ana
 05/03/2026,Conveniencia - Vitamin Water,$4.59,Variáveis,Alimentação,Crédito,RBC,Ana
+05/03/2026,Couchetard,$4.81,Eventual,Alimentação,Crédito,RBC,Ana
+06/03/2026,Lanche Concordia,$12.82,Variáveis,Alimentação,Crédito,RBC,Ana
+06/03/2026,Couchetard,$10.34,Eventual,Alimentação,Crédito,RBC,Ana
 07/03/2026,Adonis ,$39.82,Variáveis,Mercado,Crédito,TD,Vini
 07/03/2026,Walmart - Físico,$156.37,Variáveis,Mercado,Crédito,TD,Vini
 07/03/2026,Pizza Soleil,$23.64,Variáveis,Alimentação,Crédito,TD,Vini
 08/03/2026,Walmart ,$49.94,Variáveis,Mercado,Crédito,RBC,Ana
 08/03/2026,Walmart - Potes,$44.81,Variáveis,Mercado,Crédito,TD,Vini
+09/03/2026,Shein,$52.34,Variáveis,Pessoal,Crédito,RBC,Ana
 09/03/2026,Walmart Delivery Pass,$10.31,Fixas,Assinatura,Crédito,RBC,Ana
 09/03/2026,Almoço UQAM ,$21.67,Variáveis,Alimentação,Débito,RBC,Ana
 09/03/2026,Dollarama,$14.66,Eventual,Casa,Débito,RBC,Ana
@@ -110,3 +117,10 @@ DATA,DESPESA,VALOR,CATEGORIA,SUBCATEGORIA,PAGAMENTO,BANCO,DONO
 16/03/2026,Walmart - App,$65.59,Variáveis,Mercado,Crédito,TD,Vini
 16/03/2026,Provigo - NF Ville St-Laurent,$3.17,Variáveis,Mercado,Crédito,TD,Vini
 17/03/2026,Jean Coutu - Remedios para Ana,$19.40,Variáveis,Farmácia,Crédito,RBC,Ana
+17/03/2026,Muffin plus,$7.48,Variáveis,Alimentação,Crédito,RBC,Ana
+18/03/2026,NAYAX - maquina,$3.45,Variáveis,Alimentação,Crédito,RBC,Ana
+20/03/2026,Maxi & Cie,$34.88,Variáveis,Mercado,Crédito,TD,Vini
+20/03/2026,Boustan - Lanche,$27.00,Variáveis,Alimentação,Crédito,TD,Vini
+21/03/2026,Metro - ETS,$21.16,Variáveis,Mercado,Crédito,TD,Vini
+22/03/2026,Pharmaprix,$33.66,Variáveis,Saúde,Crédito,TD,Vini
+23/03/2026,Immigration Quebec - CAQ,$135.00,Eventual,Documentação,Crédito,TD,Vini

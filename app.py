@@ -40,5 +40,4 @@ with tab_cards:
 
 # --- FOOTER ---
 st.divider()
-st.markdown("<p style='text-align:center; color:#94A3B8; font-size:0.9em;'>Desenvolvido com padrão de segurança e design corporativo.</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center; color:#64748B; font-size:0.8em; margin-top:-10px'>* Valores em Dólar Canadense</p>", unsafe_allow_html=True)

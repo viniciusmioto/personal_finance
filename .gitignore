@@ -160,5 +160,4 @@ cython_debug/
 #.idea/
 
 # data
-data/finance.csv
-src/finance.ipynb
+*.csv

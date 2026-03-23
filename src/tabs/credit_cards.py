@@ -78,16 +78,20 @@ def render_credit_cards(df, configs_df, payments_df):
 
     st.markdown(f"Cálculos baseados no período de fatura do mês {mes_ref_selecionado}.")
 
-    # Determine previous due dates to bound the payments
     import pandas as pd
-    prev_configs = configs_df[configs_df['mes_ref'] < mes_ref_selecionado]
-    if not prev_configs.empty:
-        prev_row = prev_configs.sort_values(by='mes_ref', ascending=False).iloc[0]
-        prev_due_td = prev_row['due_td']
-        prev_due_rbc = prev_row['due_rbc']
-    else:
-        prev_due_td = pd.Timestamp.min
-        prev_due_rbc = pd.Timestamp.min
+    if 'mes_ref_calculated' not in payments_df.columns:
+        def get_mes_ref(row):
+            bank = row['BANCO']
+            date = row['DATA']
+            col_due = 'due_td' if bank == 'TD' else 'due_rbc'
+            future_configs = configs_df[configs_df[col_due] >= date].sort_values(by='mes_ref')
+            if not future_configs.empty:
+                base_ref = future_configs.iloc[0]['mes_ref']
+                if 'DESCONTADA' in row and str(row['DESCONTADA']).strip().lower() == 'proxima':
+                    return base_ref + 1
+                return base_ref
+            return None
+        payments_df['mes_ref_calculated'] = payments_df.apply(get_mes_ref, axis=1)
 
     # --- TD ---
     td_invoice_mask = (
@@ -100,8 +104,7 @@ def render_credit_cards(df, configs_df, payments_df):
 
     td_pay_mask = (
         (payments_df['BANCO'] == 'TD')
-        & (payments_df['DATA'] > prev_due_td)
-        & (payments_df['DATA'] <= config_row['due_td'])
+        & (payments_df['mes_ref_calculated'] == mes_ref_selecionado)
     )
     payments_td = payments_df[td_pay_mask]['VALOR'].sum()
 
@@ -119,8 +122,7 @@ def render_credit_cards(df, configs_df, payments_df):
 
     rbc_pay_mask = (
         (payments_df['BANCO'] == 'RBC')
-        & (payments_df['DATA'] > prev_due_rbc)
-        & (payments_df['DATA'] <= config_row['due_rbc'])
+        & (payments_df['mes_ref_calculated'] == mes_ref_selecionado)
     )
     payments_rbc = payments_df[rbc_pay_mask]['VALOR'].sum()
 

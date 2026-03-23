@@ -68,6 +68,3 @@ personal_finance/
 ├── imgs/                       # Assets visuais (logos TD e RBC)
 └── .venv/                      # Ambiente virtual do Python
 ```
-
----
-*Desenvolvido com foco em segurança, clareza e design corporativo.*
